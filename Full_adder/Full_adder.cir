@@ -1,0 +1,23 @@
+* C:\FOSSEE\eSim\Full_adder\Full_adder.cir
+
+* EESchema Netlist Version 1.1 (Spice format) creation date: 06/29/21 22:55:15
+
+* To exclude a component from the Spice Netlist add [Spice_Netlist_Enabled] user FIELD set to: N
+* To reorder the component spice node sequence add [Spice_Node_Sequence] user FIELD and define sequence: 2,1,0
+
+* Sheet Name: /
+M5  /Cin Net-_M3-Pad1_ Net-_M11-Pad2_ Net-_M11-Pad2_ mosfet_p		
+M3  Net-_M3-Pad1_ /A Net-_M3-Pad3_ Net-_M3-Pad3_ mosfet_n		
+M6  Net-_M11-Pad2_ /Cin Net-_M1-Pad3_ Net-_M1-Pad3_ mosfet_p		
+M4  Net-_M3-Pad3_ /B GND GND mosfet_n		
+M2  Net-_M1-Pad3_ /A /B /B mosfet_p		
+M8  /Cout Net-_M1-Pad3_ /B /B mosfet_p		
+M7  /Cin Net-_M1-Pad3_ /Cout /Cout mosfet_n		
+U1  /B /A /Cin /Cout /Sum PORT		
+M1  /A /B Net-_M1-Pad3_ Net-_M1-Pad3_ mosfet_p		
+M10  Net-_M10-Pad1_ Net-_M1-Pad3_ GND GND mosfet_n		
+M9  Net-_M11-Pad2_ /Cin Net-_M10-Pad1_ Net-_M10-Pad1_ mosfet_n		
+M11  /Sum Net-_M11-Pad2_ GND GND mosfet_n		
+M12  /Sum Net-_M11-Pad2_ VDD VDD mosfet_p		
+
+.end

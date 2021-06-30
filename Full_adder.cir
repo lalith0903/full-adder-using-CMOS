@@ -1,0 +1,35 @@
+* C:\FOSSEE\eSim\Full_adder\Full_adder.cir
+
+.lib "sky130_fd_pr/models/sky130.lib.spice" tt
+
+xM5  Cin Net-_M3-Pad1_  Sum  Sum sky130_fd_pr__pfet_01v8 w=1 l=0.5		
+xM3  Net-_M3-Pad1_  A Net-_M3-Pad3_ Net-_M3-Pad3_ sky130_fd_pr__nfet_01v8 w=42 l=.5		
+xM6  Sum  Cin Net-_M1-Pad3_ Net-_M1-Pad3_ sky130_fd_pr__pfet_01v8 w=1 l=0.5		
+xM4  Net-_M3-Pad3_  B GND GND sky130_fd_pr__nfet_01v8 w=42 l=.5		
+xM1  A  B Net-_M1-Pad3_ Net-_M1-Pad3_ sky130_fd_pr__pfet_01v8 w=1 l=0.5		
+xM2  Net-_M1-Pad3_  A  B  B sky130_fd_pr__pfet_01v8 w=1 l=0.5		
+xM9  Sum  Cin Net-_M10-Pad1_ Net-_M10-Pad1_ sky130_fd_pr__nfet_01v8 w=42 l=.5		
+xM10  Net-_M10-Pad1_ Net-_M1-Pad3_ GND GND sky130_fd_pr__nfet_01v8 w=42 l=.5		
+xM8  Cout Net-_M1-Pad3_  B  B sky130_fd_pr__pfet_01v8 w=1 l=0.5		
+xM7  Cin Net-_M1-Pad3_  Cout  Cout sky130_fd_pr__nfet_01v8 w=42 l=.5		
+
+
+Vcin Cin 0 pulse (0 0.5 10ns 0s 0s 15ns 25ns)
+Vb B 0 pulse (0 0.5 0s 0s 0s 5ns 10ns)
+Va A 0 pulse (0 0.5 5ns 0s 0s  5ns 10ns)
+
+
+.tran  0.1ns  100ns
+
+.control
+run
+
+plot V(Cin)
+plot V(B)
+plot  V(A) 
+plot V( Sum) 
+plot V(Cout)
+
+.endc
+
+.end
